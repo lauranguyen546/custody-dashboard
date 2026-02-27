@@ -42,5 +42,5 @@ next-env.d.ts
 
 # Data files (optional - remove if you want to commit data)
 /data/*.csv
-/data/*.json
 !/data/.gitkeep
+!/data/custody-data.json

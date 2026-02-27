@@ -1,0 +1,292 @@
+{
+  "meta": {
+    "dateRange": "January 01, 2025 – February 25, 2026",
+    "totalDays": 421,
+    "generatedAt": "2026-02-27T08:00:00Z"
+  },
+  "kpi": {
+    "lauraPrimary": {
+      "value": 77.9,
+      "days": 328,
+      "totalDays": 421
+    },
+    "amberPrimary": {
+      "value": 1.2,
+      "days": 5,
+      "totalDays": 421
+    },
+    "forfeited": {
+      "value": 62.8,
+      "days": 142,
+      "scheduledDays": 226
+    },
+    "routineCare": {
+      "laura": 1428,
+      "lauraPct": 98.4,
+      "amber": 23,
+      "amberPct": 1.6,
+      "total": 1451
+    },
+    "amberHours": {
+      "total": 241.6,
+      "equivalentDays": 10.1
+    },
+    "scheduled": {
+      "laura": 0,
+      "amberOnly": 195,
+      "both": 31
+    }
+  },
+  "routineCareData": {
+    "Morning routine": {
+      "Laura": 408,
+      "Amber": 8
+    },
+    "School drop-off": {
+      "Laura": 266,
+      "Amber": 6
+    },
+    "School pick-up": {
+      "Laura": 255,
+      "Amber": 17
+    },
+    "Homework / reading": {
+      "Laura": 406,
+      "Amber": 0
+    },
+    "Dinner": {
+      "Laura": 405,
+      "Amber": 9
+    },
+    "Bedtime": {
+      "Laura": 410,
+      "Amber": 5
+    },
+    "Transport": {
+      "Laura": 15,
+      "Amber": 1
+    },
+    "Sick care": {
+      "Laura": 6,
+      "Amber": 0
+    },
+    "Medical appt": {
+      "Laura": 1,
+      "Amber": 0
+    },
+    "Meds": {
+      "Laura": 4,
+      "Amber": 0
+    }
+  },
+  "monthlyData": {
+    "2025-01": {
+      "total": 31,
+      "lauraActual": 15,
+      "amberActual": 0,
+      "bothActual": 16,
+      "forfeited": 15,
+      "amberScheduled": 31,
+      "engaged": 0,
+      "notEngaged": 31,
+      "amberHours": 0,
+      "calDays": 31
+    },
+    "2025-02": {
+      "total": 28,
+      "lauraActual": 20,
+      "amberActual": 0,
+      "bothActual": 8,
+      "forfeited": 20,
+      "amberScheduled": 28,
+      "engaged": 0,
+      "notEngaged": 28,
+      "amberHours": 0,
+      "calDays": 28
+    },
+    "2025-03": {
+      "total": 31,
+      "lauraActual": 22,
+      "amberActual": 0,
+      "bothActual": 9,
+      "forfeited": 22,
+      "amberScheduled": 31,
+      "engaged": 0,
+      "notEngaged": 31,
+      "amberHours": 0,
+      "calDays": 31
+    },
+    "2025-04": {
+      "total": 30,
+      "lauraActual": 22,
+      "amberActual": 0,
+      "bothActual": 8,
+      "forfeited": 22,
+      "amberScheduled": 30,
+      "engaged": 0,
+      "notEngaged": 30,
+      "amberHours": 0,
+      "calDays": 30
+    },
+    "2025-05": {
+      "total": 31,
+      "lauraActual": 18,
+      "amberActual": 4,
+      "bothActual": 9,
+      "forfeited": 18,
+      "amberScheduled": 31,
+      "engaged": 4,
+      "notEngaged": 27,
+      "amberHours": 64,
+      "calDays": 31
+    },
+    "2025-06": {
+      "total": 30,
+      "lauraActual": 22,
+      "amberActual": 0,
+      "bothActual": 8,
+      "forfeited": 0,
+      "amberScheduled": 8,
+      "engaged": 0,
+      "notEngaged": 30,
+      "amberHours": 0,
+      "calDays": 30
+    },
+    "2025-07": {
+      "total": 31,
+      "lauraActual": 28,
+      "amberActual": 0,
+      "bothActual": 3,
+      "forfeited": 0,
+      "amberScheduled": 3,
+      "engaged": 13,
+      "notEngaged": 18,
+      "amberHours": 3.5,
+      "calDays": 31
+    },
+    "2025-08": {
+      "total": 31,
+      "lauraActual": 26,
+      "amberActual": 0,
+      "bothActual": 5,
+      "forfeited": 10,
+      "amberScheduled": 15,
+      "engaged": 10,
+      "notEngaged": 21,
+      "amberHours": 18.5,
+      "calDays": 31
+    },
+    "2025-09": {
+      "total": 30,
+      "lauraActual": 28,
+      "amberActual": 0,
+      "bothActual": 2,
+      "forfeited": 5,
+      "amberScheduled": 6,
+      "engaged": 5,
+      "notEngaged": 25,
+      "amberHours": 7.5,
+      "calDays": 30
+    },
+    "2025-10": {
+      "total": 31,
+      "lauraActual": 23,
+      "amberActual": 1,
+      "bothActual": 7,
+      "forfeited": 3,
+      "amberScheduled": 11,
+      "engaged": 8,
+      "notEngaged": 23,
+      "amberHours": 66,
+      "calDays": 31
+    },
+    "2025-11": {
+      "total": 30,
+      "lauraActual": 28,
+      "amberActual": 0,
+      "bothActual": 2,
+      "forfeited": 8,
+      "amberScheduled": 9,
+      "engaged": 4,
+      "notEngaged": 26,
+      "amberHours": 18,
+      "calDays": 30
+    },
+    "2025-12": {
+      "total": 31,
+      "lauraActual": 28,
+      "amberActual": 0,
+      "bothActual": 3,
+      "forfeited": 8,
+      "amberScheduled": 8,
+      "engaged": 1,
+      "notEngaged": 30,
+      "amberHours": 20,
+      "calDays": 31
+    },
+    "2026-01": {
+      "total": 31,
+      "lauraActual": 26,
+      "amberActual": 0,
+      "bothActual": 5,
+      "forfeited": 8,
+      "amberScheduled": 10,
+      "engaged": 6,
+      "notEngaged": 25,
+      "amberHours": 26.5,
+      "calDays": 31
+    },
+    "2026-02": {
+      "total": 25,
+      "lauraActual": 22,
+      "amberActual": 0,
+      "bothActual": 3,
+      "forfeited": 3,
+      "amberScheduled": 5,
+      "engaged": 14,
+      "notEngaged": 11,
+      "amberHours": 17.6,
+      "calDays": 28
+    }
+  },
+  "dayOfWeekData": {
+    "Monday": {
+      "Laura": 337,
+      "Amber": 12
+    },
+    "Tuesday": {
+      "Laura": 346,
+      "Amber": 10
+    },
+    "Wednesday": {
+      "Laura": 341,
+      "Amber": 9
+    },
+    "Thursday": {
+      "Laura": 349,
+      "Amber": 4
+    },
+    "Friday": {
+      "Laura": 338,
+      "Amber": 6
+    },
+    "Saturday": {
+      "Laura": 241,
+      "Amber": 0
+    },
+    "Sunday": {
+      "Laura": 238,
+      "Amber": 5
+    }
+  },
+  "raw": {
+    "lauraScheduled": 0,
+    "amberOnlyScheduled": 195,
+    "bothScheduled": 31,
+    "lauraPrimary": 328,
+    "amberPrimary": 5,
+    "bothPrimary": 88,
+    "forfeitedDays": 142,
+    "amberScheduledTotal": 226
+  }
+}
