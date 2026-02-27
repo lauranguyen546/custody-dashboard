@@ -21,10 +21,25 @@ export interface DayOfWeekData {
   [key: string]: { Laura: number; Amber: number }
 }
 
-export interface ExpenseData {
+export interface ExpenseCategory {
+  name: string
+  amount: number
+  pct: number
+}
+
+export interface ExpenseMonthly {
   labels: string[]
   laura: number[]
   amber: number[]
+  items: number[]
+}
+
+export interface ExpenseData {
+  total: number
+  lauraTotal: number
+  amberTotal: number
+  categories: ExpenseCategory[]
+  monthly: ExpenseMonthly
 }
 
 export interface KPIMetrics {

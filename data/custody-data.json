@@ -1,6 +1,6 @@
 {
   "meta": {
-    "dateRange": "January 01, 2025 – February 25, 2026",
+    "dateRange": "January 01, 2025 \u2013 February 25, 2026",
     "totalDays": 421,
     "generatedAt": "2026-02-27T08:00:00Z"
   },
@@ -288,5 +288,93 @@
     "bothPrimary": 88,
     "forfeitedDays": 142,
     "amberScheduledTotal": 226
+  },
+  "expenses": {
+    "total": 11049.09,
+    "lauraTotal": 11049.09,
+    "amberTotal": 0,
+    "categories": [
+      {
+        "name": "School / Education",
+        "amount": 10139.5,
+        "pct": 91.8
+      },
+      {
+        "name": "Activities / Clothing / Other",
+        "amount": 813.07,
+        "pct": 7.4
+      },
+      {
+        "name": "Medical",
+        "amount": 96.52,
+        "pct": 0.9
+      }
+    ],
+    "monthly": {
+      "labels": [
+        "Dec '24",
+        "Jan '25",
+        "Feb '25",
+        "Mar '25",
+        "Apr '25",
+        "May '25",
+        "Jul '25",
+        "Aug '25",
+        "Sep '25",
+        "Oct '25",
+        "Nov '25",
+        "Dec '25",
+        "Jan '26",
+        "Feb '26"
+      ],
+      "laura": [
+        605,
+        590,
+        2122.5,
+        825,
+        320,
+        303,
+        805.98,
+        663.98,
+        659.42,
+        492.21,
+        450,
+        664,
+        2084,
+        464
+      ],
+      "amber": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "items": [
+        2,
+        4,
+        9,
+        6,
+        3,
+        5,
+        4,
+        5,
+        9,
+        7,
+        5,
+        4,
+        3,
+        2
+      ]
+    }
   }
 }
