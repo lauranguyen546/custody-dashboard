@@ -1,0 +1,41 @@
+name: Weekly Data Refresh
+
+on:
+  schedule:
+    # Every Sunday at 2 AM
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    # Manual trigger
+
+jobs:
+  refresh-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch Google Sheets data
+        env:
+          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+          GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
+        run: node scripts/fetch-sheets-data.js
+
+      - name: Build Next.js app
+        run: npm run build
+
+      - name: Deploy to Vercel
+        uses: vercel/action-deploy@v1
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
