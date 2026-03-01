@@ -9,20 +9,30 @@
     "lint": "next lint",
     "fetch-data": "node scripts/fetch-sheets-data.js",
     "process-data": "node scripts/process-custody-data.js",
-    "refresh": "npm run fetch-data && npm run build"
+    "refresh": "npm run fetch-data && npm run build",
+    "db:migrate": "psql $DATABASE_URL -f supabase/migrations/001_create_evidence_tables.sql"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
     "chart.js": "^4.4.1",
     "csv-parse": "^5.5.0",
+    "exifreader": "^4.20.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.1",
+    "lucide-react": "^0.294.0",
     "next": "14.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.7",
     "autoprefixer": "^10.0.1",
+    "dotenv": "^17.3.1",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
