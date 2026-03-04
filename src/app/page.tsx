@@ -122,10 +122,6 @@ export default function DashboardPage() {
             <span className="text-amber-700 font-semibold">orange line</span>{' '}
             shows Amber&apos;s recorded hours with EN as a percentage of total
             available hours — the most accurate measure of parenting presence.
-            The{' '}
-            <span className="text-gray-500 font-semibold">grey dashed line</span>{' '}
-            shows &quot;days with any contact&quot; — even a single text counts,
-            significantly overstating actual involvement.
           </div>
           <div className="h-80">
             <EngagementChart data={engagementData} />
@@ -154,9 +150,9 @@ export default function DashboardPage() {
                   <th className="text-left p-3 font-semibold">Month</th>
                   <th className="text-center p-3 font-semibold bg-amber-50">Hours with EN</th>
                   <th className="text-center p-3 font-semibold bg-amber-50">% of Available Hours</th>
-                  <th className="text-center p-3 font-semibold">Days with<br/>Any Contact</th>
-                  <th className="text-center p-3 font-semibold">Total<br/>Logged Days</th>
-                  <th className="text-center p-3 font-semibold">% of Days<br/>(any contact)</th>
+                  <th className="text-center p-3 font-semibold">Assigned Days<br/>(Amber)</th>
+                  <th className="text-center p-3 font-semibold">Forfeited<br/>Days</th>
+                  <th className="text-center p-3 font-semibold">Hours with Ellis<br/>(Amber Time)</th>
                 </tr>
               </thead>
               <tbody>
@@ -166,8 +162,6 @@ export default function DashboardPage() {
                   const label = `${names[parseInt(m)]} 20${y.slice(2)}`
                   const availHours = data.calDays * 24
                   const pctHours = availHours > 0 ? ((data.amberHours / availHours) * 100).toFixed(2) : '0.00'
-                  const totalDays = data.engaged + data.notEngaged
-                  const pctDays = totalDays > 0 ? ((data.engaged / totalDays) * 100).toFixed(1) : '0.0'
                   const isLow = parseFloat(pctHours) < 2
 
                   return (
@@ -179,9 +173,13 @@ export default function DashboardPage() {
                       <td className={`p-3 text-center font-bold ${isLow ? 'text-red-600' : 'text-green-600'}`}>
                         {pctHours}%
                       </td>
-                      <td className="p-3 text-center">{data.engaged}</td>
-                      <td className="p-3 text-center">{totalDays}</td>
-                      <td className="p-3 text-center">{pctDays}%</td>
+                      <td className="p-3 text-center">{data.amberScheduled ?? '—'}</td>
+                      <td className={`p-3 text-center font-semibold ${(data.forfeited ?? 0) > 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                        {data.forfeited ?? 0}
+                      </td>
+                      <td className={`p-3 text-center font-semibold ${data.amberHours > 0 ? 'text-amber-700' : 'text-gray-400'}`}>
+                        {data.amberHours > 0 ? `${data.amberHours.toFixed(1)} hrs` : '—'}
+                      </td>
                     </tr>
                   )
                 })}
@@ -200,17 +198,13 @@ export default function DashboardPage() {
                     })()}%
                   </td>
                   <td className="p-3 text-center">
-                    {Object.values(engagementData).reduce((sum, d) => sum + d.engaged, 0)}
+                    {Object.values(engagementData).reduce((sum, d) => sum + (d.amberScheduled ?? 0), 0)}
                   </td>
-                  <td className="p-3 text-center">
-                    {Object.values(engagementData).reduce((sum, d) => sum + d.engaged + d.notEngaged, 0)}
+                  <td className="p-3 text-center font-semibold text-red-600">
+                    {Object.values(engagementData).reduce((sum, d) => sum + (d.forfeited ?? 0), 0)}
                   </td>
-                  <td className="p-3 text-center">
-                    {(() => {
-                      const totalEngaged = Object.values(engagementData).reduce((sum, d) => sum + d.engaged, 0)
-                      const totalDays = Object.values(engagementData).reduce((sum, d) => sum + d.engaged + d.notEngaged, 0)
-                      return totalDays > 0 ? ((totalEngaged / totalDays) * 100).toFixed(1) : '0.0'
-                    })()}%
+                  <td className="p-3 text-center text-amber-700 font-semibold">
+                    {Object.values(engagementData).reduce((sum, d) => sum + d.amberHours, 0).toFixed(1)} hrs
                   </td>
                 </tr>
               </tfoot>

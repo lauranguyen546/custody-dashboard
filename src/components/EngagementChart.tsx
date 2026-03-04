@@ -7,9 +7,9 @@ interface EngagementData {
   [key: string]: {
     amberHours: number
     calDays: number
-    engaged: number
-    notEngaged: number
     total: number
+    amberScheduled?: number
+    forfeited?: number
   }
 }
 
@@ -57,22 +57,6 @@ export default function EngagementChart({ data }: EngagementChartProps) {
             pointRadius: 6,
             pointBackgroundColor: '#d97706',
             pointHoverRadius: 8,
-            tension: 0.3,
-          },
-          {
-            label: '% of days — any contact (incl. texts/calls)',
-            data: engMonths.map((k) => {
-              const d = data[k]
-              const total = d.engaged + d.notEngaged
-              return total > 0 ? parseFloat(((d.engaged / total) * 100).toFixed(1)) : 0
-            }),
-            borderColor: '#94a3b8',
-            backgroundColor: 'transparent',
-            fill: false,
-            borderWidth: 1.5,
-            borderDash: [5, 4],
-            pointRadius: 4,
-            pointBackgroundColor: '#94a3b8',
             tension: 0.3,
           },
         ],
