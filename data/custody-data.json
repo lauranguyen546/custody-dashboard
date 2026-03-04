@@ -90,7 +90,8 @@
       "engaged": 0,
       "notEngaged": 31,
       "amberHours": 0,
-      "calDays": 31
+      "calDays": 31,
+      "amberScheduledHours": 15
     },
     "2025-02": {
       "total": 28,
@@ -102,7 +103,8 @@
       "engaged": 0,
       "notEngaged": 28,
       "amberHours": 0,
-      "calDays": 28
+      "calDays": 28,
+      "amberScheduledHours": 12
     },
     "2025-03": {
       "total": 31,
@@ -114,7 +116,8 @@
       "engaged": 0,
       "notEngaged": 31,
       "amberHours": 0,
-      "calDays": 31
+      "calDays": 31,
+      "amberScheduledHours": 12
     },
     "2025-04": {
       "total": 30,
@@ -126,7 +129,8 @@
       "engaged": 0,
       "notEngaged": 30,
       "amberHours": 0,
-      "calDays": 30
+      "calDays": 30,
+      "amberScheduledHours": 15
     },
     "2025-05": {
       "total": 31,
@@ -138,7 +142,8 @@
       "engaged": 4,
       "notEngaged": 27,
       "amberHours": 64,
-      "calDays": 31
+      "calDays": 31,
+      "amberScheduledHours": 12
     },
     "2025-06": {
       "total": 30,
@@ -150,7 +155,8 @@
       "engaged": 0,
       "notEngaged": 30,
       "amberHours": 0,
-      "calDays": 30
+      "calDays": 30,
+      "amberScheduledHours": 12
     },
     "2025-07": {
       "total": 31,
@@ -162,7 +168,8 @@
       "engaged": 13,
       "notEngaged": 18,
       "amberHours": 3.5,
-      "calDays": 31
+      "calDays": 31,
+      "amberScheduledHours": 113
     },
     "2025-08": {
       "total": 31,
@@ -174,7 +181,8 @@
       "engaged": 10,
       "notEngaged": 21,
       "amberHours": 18.5,
-      "calDays": 31
+      "calDays": 31,
+      "amberScheduledHours": 110
     },
     "2025-09": {
       "total": 30,
@@ -186,7 +194,8 @@
       "engaged": 5,
       "notEngaged": 25,
       "amberHours": 7.5,
-      "calDays": 30
+      "calDays": 30,
+      "amberScheduledHours": 110
     },
     "2025-10": {
       "total": 31,
@@ -198,7 +207,8 @@
       "engaged": 8,
       "notEngaged": 23,
       "amberHours": 66,
-      "calDays": 31
+      "calDays": 31,
+      "amberScheduledHours": 121
     },
     "2025-11": {
       "total": 30,
@@ -210,7 +220,8 @@
       "engaged": 4,
       "notEngaged": 26,
       "amberHours": 18,
-      "calDays": 30
+      "calDays": 30,
+      "amberScheduledHours": 151
     },
     "2025-12": {
       "total": 31,
@@ -222,7 +233,8 @@
       "engaged": 1,
       "notEngaged": 30,
       "amberHours": 20,
-      "calDays": 31
+      "calDays": 31,
+      "amberScheduledHours": 113
     },
     "2026-01": {
       "total": 31,
@@ -234,7 +246,8 @@
       "engaged": 6,
       "notEngaged": 25,
       "amberHours": 26.5,
-      "calDays": 31
+      "calDays": 31,
+      "amberScheduledHours": 110
     },
     "2026-02": {
       "total": 25,
@@ -246,7 +259,8 @@
       "engaged": 14,
       "notEngaged": 11,
       "amberHours": 17.6,
-      "calDays": 28
+      "calDays": 28,
+      "amberScheduledHours": 110
     }
   },
   "dayOfWeekData": {

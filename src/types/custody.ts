@@ -10,6 +10,7 @@ export interface MonthlyData {
     bothActual: number
     forfeited: number
     amberScheduled: number
+    amberScheduledHours: number
     engaged: number
     notEngaged: number
     amberHours: number

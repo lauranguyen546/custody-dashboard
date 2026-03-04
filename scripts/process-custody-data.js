@@ -94,7 +94,8 @@ function createMonthlyAccumulator() {
     amberEngagedDays: 0,
     totalDays: 0,
     forfeited: 0,
-    amberScheduled: 0
+    amberScheduled: 0,
+    amberScheduledHours: 0   // Expected hours per parenting plan: Wed 3hrs, Fri 8hrs, Sat 24hrs, Sun 17hrs
   };
 }
 
@@ -215,7 +216,20 @@ function processCustodyData(csvPath) {
     if (schedLower.includes('amber') || schedLower.includes('both')) {
       amberScheduledTotal++;
       monthly[monthKey].amberScheduled++;
-      
+
+      // Scheduled hours per parenting plan:
+      //   Wednesday visits: 4:30 PM – 7:30 PM = 3 hrs
+      //   Every other weekend: Fri 4 PM–midnight = 8 hrs, Sat = 24 hrs, Sun midnight–5 PM = 17 hrs
+      if (dayName === 'Wednesday') {
+        monthly[monthKey].amberScheduledHours += 3;
+      } else if (dayName === 'Friday') {
+        monthly[monthKey].amberScheduledHours += 8;
+      } else if (dayName === 'Saturday') {
+        monthly[monthKey].amberScheduledHours += 24;
+      } else if (dayName === 'Sunday') {
+        monthly[monthKey].amberScheduledHours += 17;
+      }
+
       if (actualLower.includes('laura') && !actualLower.includes('amber') && !actualLower.includes('both')) {
         forfeitedDays++;
         monthly[monthKey].forfeited++;
@@ -331,6 +345,7 @@ function processCustodyData(csvPath) {
       bothActual: d.both,
       forfeited: d.forfeited,
       amberScheduled: d.amberScheduled,
+      amberScheduledHours: Math.round(d.amberScheduledHours * 10) / 10,
       engaged: eng,
       notEngaged: notEng,
       amberHours: hrs,

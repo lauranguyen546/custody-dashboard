@@ -5,6 +5,7 @@ import ParentingTimeChart from '@/components/ParentingTimeChart'
 import ForfeitedChart from '@/components/ForfeitedChart'
 import DayOfWeekChart from '@/components/DayOfWeekChart'
 import EngagementChart from '@/components/EngagementChart'
+import ScheduledVsActualChart from '@/components/ScheduledVsActualChart'
 import data from '../../data/custody-data.json'
 import { MonthlyData } from '@/types/custody'
 
@@ -126,6 +127,28 @@ export default function DashboardPage() {
           <div className="h-80">
             <EngagementChart data={engagementData} />
           </div>
+        </div>
+
+        {/* Scheduled vs Actual Hours Chart */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+          <h2 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-100">
+            Amber&apos;s scheduled time vs. actual time with EN — court order vs. reality
+          </h2>
+          <div className="bg-red-50 border-l-4 border-red-500 rounded-r-lg p-4 mb-4 text-sm">
+            <strong>Note for court:</strong> Grey bars show hours Amber was{' '}
+            <em>court-ordered</em> to have Ellis (every Wednesday 4:30–7:30 PM +
+            every other weekend Fri 4 PM – Sun 5 PM). Orange bars show hours she
+            actually spent with Ellis. The{' '}
+            <span className="text-purple-600 font-semibold">purple dashed line</span>{' '}
+            shows utilization — the percentage of her court-ordered time she used.
+          </div>
+          <div className="h-80">
+            <ScheduledVsActualChart data={engagementData} />
+          </div>
+          <p className="text-xs text-gray-500 mt-3 italic">
+            Scheduled hours based on court order: Wed 4:30–7:30 PM (3 hrs) + EOW Fri 4 PM–Sun 5 PM (49 hrs/weekend).
+            Actual hours sourced from co-parent custody log.
+          </p>
         </div>
 
         {/* Engagement Quality Table */}
