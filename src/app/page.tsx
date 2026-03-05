@@ -335,7 +335,7 @@ export default function DashboardPage() {
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
           <div className="bg-slate-800 text-white rounded-lg p-4 mb-6">
             <h2 className="text-lg font-semibold">
-              Ellis Expense Contributions | Dec 2024 – Feb 2026 | All 68 logged items
+              Ellis Expense Contributions | Dec 2024 – Mar 2026 | All 71 logged items
             </h2>
           </div>
 
@@ -346,21 +346,21 @@ export default function DashboardPage() {
                 ${expenses.lauraTotal.toLocaleString()}
               </div>
               <div className="text-xs text-gray-600">Laura&apos;s total contributions</div>
-              <div className="text-xs text-gray-500">100% of all 68 logged items</div>
+              <div className="text-xs text-gray-500">100% of all 71 logged items</div>
             </div>
             <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-red-600">
                 ${expenses.amberTotal.toLocaleString()}
               </div>
               <div className="text-xs text-gray-600">Amber&apos;s total contributions</div>
-              <div className="text-xs text-gray-500">0% — no items paid in 14 months</div>
+              <div className="text-xs text-gray-500">0% — no items paid in 15 months</div>
             </div>
             <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-red-600">
                 ${expenses.total.toLocaleString()}
               </div>
               <div className="text-xs text-gray-600">Unreimbursed balance owed</div>
-              <div className="text-xs text-gray-500">All 68 items — none paid back</div>
+              <div className="text-xs text-gray-500">All 71 items — none paid back</div>
             </div>
           </div>
 
@@ -430,13 +430,13 @@ export default function DashboardPage() {
 
           {/* Key Findings */}
           <div className="bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-4 mb-6 text-sm">
-            <strong>Key findings:</strong> Over 14 months of documented expenses, Laura has paid{' '}
+            <strong>Key findings:</strong> Over 15 months of documented expenses, Laura has paid{' '}
             <strong>100% (${expenses.total.toLocaleString()})</strong> of all logged costs for
             Ellis — covering school programs, enrichment activities, clothing, sports equipment, and
-            medical care. Amber has contributed <strong>$0.00</strong> across all 68 expense items.
+            medical care. Amber has contributed <strong>$0.00</strong> across all 71 expense items.
             The full balance of <strong>${expenses.total.toLocaleString()}</strong> remains
             unreimbursed. The single largest category is school and educational programming at
-            $10,139.50 (91.8%).
+            $10,768.50 (91.6%).
           </div>
 
           {/* Monthly Totals Table */}
@@ -470,11 +470,11 @@ export default function DashboardPage() {
                     </tr>
                   ))}
                   <tr className="bg-gray-100 font-bold">
-                    <td className="p-2">Total (14 months)</td>
+                    <td className="p-2">Total (15 months)</td>
                     <td className="p-2 text-right text-blue-600">
                       ${expenses.total.toLocaleString()}
                     </td>
-                    <td className="p-2 text-center">68</td>
+                    <td className="p-2 text-center">71</td>
                     <td className="p-2 text-center text-red-600">$0.00</td>
                   </tr>
                 </tbody>

@@ -1,82 +1,82 @@
 {
   "meta": {
-    "dateRange": "January 01, 2025 \u2013 February 25, 2026",
-    "totalDays": 421,
-    "generatedAt": "2026-02-27T08:00:00Z"
+    "dateRange": "January 01, 2025 \u2013 March 03, 2026",
+    "totalDays": 427,
+    "generatedAt": "2026-03-05T01:03:04.843Z"
   },
   "kpi": {
     "lauraPrimary": {
-      "value": 77.9,
-      "days": 328,
-      "totalDays": 421
+      "value": 78.0,
+      "days": 333,
+      "totalDays": 427
     },
     "amberPrimary": {
       "value": 1.2,
       "days": 5,
-      "totalDays": 421
+      "totalDays": 427
     },
     "forfeited": {
-      "value": 62.8,
-      "days": 142,
-      "scheduledDays": 226
+      "value": 63.3,
+      "days": 145,
+      "scheduledDays": 229
     },
     "routineCare": {
-      "laura": 1428,
-      "lauraPct": 98.4,
-      "amber": 23,
-      "amberPct": 1.6,
-      "total": 1451
+      "laura": 2222,
+      "lauraPct": 97.9,
+      "amber": 47,
+      "amberPct": 2.1,
+      "total": 2269
     },
     "amberHours": {
-      "total": 241.6,
-      "equivalentDays": 10.1
+      "total": 247.6,
+      "equivalentDays": 10.3
     },
     "scheduled": {
-      "laura": 0,
-      "amberOnly": 195,
-      "both": 31
+      "laura": 199,
+      "amberOnly": 28,
+      "both": 201
     }
   },
   "routineCareData": {
     "Morning routine": {
-      "Laura": 408,
-      "Amber": 8
+      "laura": 414,
+      "amber": 8
     },
     "School drop-off": {
-      "Laura": 266,
-      "Amber": 6
+      "laura": 269,
+      "amber": 6
     },
     "School pick-up": {
-      "Laura": 255,
-      "Amber": 17
+      "laura": 258,
+      "amber": 17
     },
     "Homework / reading": {
-      "Laura": 406,
-      "Amber": 0
+      "laura": 411,
+      "amber": 0
     },
     "Dinner": {
-      "Laura": 405,
-      "Amber": 9
+      "laura": 411,
+      "amber": 9
     },
     "Bedtime": {
-      "Laura": 410,
-      "Amber": 5
+      "laura": 416,
+      "amber": 5
     },
     "Transport": {
-      "Laura": 15,
-      "Amber": 1
+      "laura": 16,
+      "amber": 2
     },
     "Sick care": {
-      "Laura": 6,
-      "Amber": 0
+      "laura": 6,
+      "amber": 0
     },
     "Medical appt": {
-      "Laura": 1,
-      "Amber": 0
+      "laura": 2,
+      "amber": 0
     },
     "Meds": {
-      "Laura": 4,
-      "Amber": 0
+      "laura": 4,
+      "amber": 0
     }
   },
   "monthlyData": {
@@ -87,11 +87,11 @@
       "bothActual": 16,
       "forfeited": 15,
       "amberScheduled": 31,
+      "amberScheduledHours": 219,
       "engaged": 0,
       "notEngaged": 31,
       "amberHours": 0,
-      "calDays": 31,
-      "amberScheduledHours": 15
+      "calDays": 31
     },
     "2025-02": {
       "total": 28,
@@ -100,11 +100,11 @@
       "bothActual": 8,
       "forfeited": 20,
       "amberScheduled": 28,
+      "amberScheduledHours": 208,
       "engaged": 0,
       "notEngaged": 28,
       "amberHours": 0,
-      "calDays": 28,
-      "amberScheduledHours": 12
+      "calDays": 28
     },
     "2025-03": {
       "total": 31,
@@ -113,11 +113,11 @@
       "bothActual": 9,
       "forfeited": 22,
       "amberScheduled": 31,
+      "amberScheduledHours": 249,
       "engaged": 0,
       "notEngaged": 31,
       "amberHours": 0,
-      "calDays": 31,
-      "amberScheduledHours": 12
+      "calDays": 31
     },
     "2025-04": {
       "total": 30,
@@ -126,11 +126,11 @@
       "bothActual": 8,
       "forfeited": 22,
       "amberScheduled": 30,
+      "amberScheduledHours": 211,
       "engaged": 0,
       "notEngaged": 30,
       "amberHours": 0,
-      "calDays": 30,
-      "amberScheduledHours": 15
+      "calDays": 30
     },
     "2025-05": {
       "total": 31,
@@ -139,11 +139,11 @@
       "bothActual": 9,
       "forfeited": 18,
       "amberScheduled": 31,
+      "amberScheduledHours": 240,
       "engaged": 4,
       "notEngaged": 27,
       "amberHours": 64,
-      "calDays": 31,
-      "amberScheduledHours": 12
+      "calDays": 31
     },
     "2025-06": {
       "total": 30,
@@ -152,11 +152,11 @@
       "bothActual": 8,
       "forfeited": 0,
       "amberScheduled": 8,
+      "amberScheduledHours": 98,
       "engaged": 0,
       "notEngaged": 30,
       "amberHours": 0,
-      "calDays": 30,
-      "amberScheduledHours": 12
+      "calDays": 30
     },
     "2025-07": {
       "total": 31,
@@ -165,11 +165,11 @@
       "bothActual": 3,
       "forfeited": 0,
       "amberScheduled": 3,
+      "amberScheduledHours": 3,
       "engaged": 13,
       "notEngaged": 18,
       "amberHours": 3.5,
-      "calDays": 31,
-      "amberScheduledHours": 113
+      "calDays": 31
     },
     "2025-08": {
       "total": 31,
@@ -178,11 +178,11 @@
       "bothActual": 5,
       "forfeited": 10,
       "amberScheduled": 15,
+      "amberScheduledHours": 121,
       "engaged": 10,
       "notEngaged": 21,
       "amberHours": 18.5,
-      "calDays": 31,
-      "amberScheduledHours": 110
+      "calDays": 31
     },
     "2025-09": {
       "total": 30,
@@ -191,11 +191,11 @@
       "bothActual": 2,
       "forfeited": 5,
       "amberScheduled": 6,
+      "amberScheduledHours": 52,
       "engaged": 5,
       "notEngaged": 25,
       "amberHours": 7.5,
-      "calDays": 30,
-      "amberScheduledHours": 110
+      "calDays": 30
     },
     "2025-10": {
       "total": 31,
@@ -204,11 +204,11 @@
       "bothActual": 7,
       "forfeited": 3,
       "amberScheduled": 11,
+      "amberScheduledHours": 80,
       "engaged": 8,
       "notEngaged": 23,
       "amberHours": 66,
-      "calDays": 31,
-      "amberScheduledHours": 121
+      "calDays": 31
     },
     "2025-11": {
       "total": 30,
@@ -217,11 +217,11 @@
       "bothActual": 2,
       "forfeited": 8,
       "amberScheduled": 9,
+      "amberScheduledHours": 147,
       "engaged": 4,
       "notEngaged": 26,
       "amberHours": 18,
-      "calDays": 30,
-      "amberScheduledHours": 151
+      "calDays": 30
     },
     "2025-12": {
       "total": 31,
@@ -230,11 +230,11 @@
       "bothActual": 3,
       "forfeited": 8,
       "amberScheduled": 8,
+      "amberScheduledHours": 93,
       "engaged": 1,
       "notEngaged": 30,
       "amberHours": 20,
-      "calDays": 31,
-      "amberScheduledHours": 113
+      "calDays": 31
     },
     "2026-01": {
       "total": 31,
@@ -243,135 +243,156 @@
       "bothActual": 5,
       "forfeited": 8,
       "amberScheduled": 10,
+      "amberScheduledHours": 136,
       "engaged": 6,
       "notEngaged": 25,
       "amberHours": 26.5,
-      "calDays": 31,
-      "amberScheduledHours": 110
+      "calDays": 31
     },
     "2026-02": {
-      "total": 25,
-      "lauraActual": 22,
+      "total": 28,
+      "lauraActual": 24,
       "amberActual": 0,
-      "bothActual": 3,
-      "forfeited": 3,
-      "amberScheduled": 5,
-      "engaged": 14,
-      "notEngaged": 11,
-      "amberHours": 17.6,
-      "calDays": 28,
-      "amberScheduledHours": 110
+      "bothActual": 4,
+      "forfeited": 5,
+      "amberScheduled": 7,
+      "amberScheduledHours": 61,
+      "engaged": 15,
+      "notEngaged": 13,
+      "amberHours": 21.1,
+      "calDays": 28
+    },
+    "2026-03": {
+      "total": 3,
+      "lauraActual": 3,
+      "amberActual": 0,
+      "bothActual": 0,
+      "forfeited": 1,
+      "amberScheduled": 1,
+      "amberScheduledHours": 17,
+      "engaged": 2,
+      "notEngaged": 2,
+      "amberHours": 2.5,
+      "calDays": 31
     }
   },
   "dayOfWeekData": {
     "Monday": {
-      "Laura": 337,
+      "Laura": 343,
       "Amber": 12
     },
     "Tuesday": {
-      "Laura": 346,
+      "Laura": 352,
       "Amber": 10
     },
     "Wednesday": {
-      "Laura": 341,
+      "Laura": 342,
       "Amber": 9
     },
     "Thursday": {
-      "Laura": 349,
+      "Laura": 355,
       "Amber": 4
     },
     "Friday": {
-      "Laura": 338,
+      "Laura": 344,
       "Amber": 6
     },
     "Saturday": {
-      "Laura": 241,
+      "Laura": 244,
       "Amber": 0
     },
     "Sunday": {
-      "Laura": 238,
-      "Amber": 5
+      "Laura": 242,
+      "Amber": 6
     }
   },
   "raw": {
-    "lauraScheduled": 0,
-    "amberOnlyScheduled": 195,
-    "bothScheduled": 31,
-    "lauraPrimary": 328,
+    "lauraScheduled": 199,
+    "amberOnlyScheduled": 28,
+    "bothScheduled": 201,
+    "lauraPrimary": 333,
     "amberPrimary": 5,
-    "bothPrimary": 88,
-    "forfeitedDays": 142,
-    "amberScheduledTotal": 226
+    "bothPrimary": 90,
+    "forfeitedDays": 145,
+    "amberScheduledTotal": 229
   },
   "expenses": {
-    "total": 11049.09,
-    "lauraTotal": 11049.09,
+    "lauraTotal": 11759.08,
     "amberTotal": 0,
+    "total": 11759.08,
     "categories": [
       {
-        "name": "School / Education",
-        "amount": 10139.5,
-        "pct": 91.8
+        "name": "School",
+        "amount": 10768.5,
+        "pct": 91.6
       },
       {
-        "name": "Activities / Clothing / Other",
+        "name": "Other",
         "amount": 813.07,
-        "pct": 7.4
+        "pct": 6.9
       },
       {
         "name": "Medical",
         "amount": 96.52,
-        "pct": 0.9
+        "pct": 0.8
+      },
+      {
+        "name": "Clothing",
+        "amount": 80.99,
+        "pct": 0.7
       }
     ],
     "monthly": {
       "labels": [
-        "Dec '24",
-        "Jan '25",
-        "Feb '25",
-        "Mar '25",
-        "Apr '25",
-        "May '25",
-        "Jul '25",
-        "Aug '25",
-        "Sep '25",
-        "Oct '25",
-        "Nov '25",
-        "Dec '25",
-        "Jan '26",
-        "Feb '26"
+        "Dec 2024",
+        "Jan 2025",
+        "Feb 2025",
+        "Mar 2025",
+        "Apr 2025",
+        "May 2025",
+        "Jul 2025",
+        "Aug 2025",
+        "Sep 2025",
+        "Oct 2025",
+        "Nov 2025",
+        "Dec 2025",
+        "Jan 2026",
+        "Feb 2026",
+        "Mar 2026"
       ],
       "laura": [
-        605,
-        590,
+        605.0,
+        590.0,
         2122.5,
-        825,
-        320,
-        303,
+        825.0,
+        320.0,
+        303.0,
         805.98,
         663.98,
         659.42,
         492.21,
-        450,
-        664,
-        2084,
-        464
+        450.0,
+        664.0,
+        2084.0,
+        544.99,
+        629.0
       ],
       "amber": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
       "items": [
         2,
@@ -386,6 +407,7 @@
         7,
         5,
         4,
+        3,
         3,
         2
       ]
