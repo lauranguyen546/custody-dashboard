@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import Chart from 'chart.js/auto'
 
 interface RoutineCareData {
-  [key: string]: { Laura: number; Amber: number }
+  [key: string]: { laura: number; amber: number }
 }
 
 interface RoutineCareChartProps {
@@ -23,8 +23,15 @@ export default function RoutineCareChart({ data }: RoutineCareChartProps) {
       k => data[k].laura + data[k].amber > 5
     )
 
-    const lauraData = labels.map(k => data[k].laura)
-    const amberData = labels.map(k => data[k].amber)
+    // Convert to percentages
+    const lauraData = labels.map(k => {
+      const total = data[k].laura + data[k].amber
+      return total > 0 ? Math.round((data[k].laura / total) * 100) : 0
+    })
+    const amberData = labels.map(k => {
+      const total = data[k].laura + data[k].amber
+      return total > 0 ? Math.round((data[k].amber / total) * 100) : 0
+    })
 
     if (chartRef.current) {
       chartRef.current.destroy()
@@ -59,24 +66,30 @@ export default function RoutineCareChart({ data }: RoutineCareChartProps) {
           legend: { position: 'top' },
           tooltip: {
             callbacks: {
-              afterBody: (items) => {
-                const label = items[0].label
-                const d = data[label]
-                const total = d.laura + d.amber
-                if (total === 0) return ''
-                const item = items[0]
-                if (!item || !item.parsed || typeof item.parsed.y !== 'number') return ''
-                const pct = ((item.parsed.y / total) * 100).toFixed(1)
-                return `${pct}% of care events`
+              label: (item) => {
+                const label = item.dataset.label ?? ''
+                const pct = item.parsed.y
+                const category = item.label
+                const total = data[category].laura + data[category].amber
+                const raw = item.datasetIndex === 0 ? data[category].laura : data[category].amber
+                return `${label}: ${pct}% (${raw} of ${total} events)`
               },
             },
           },
         },
         scales: {
-          x: { grid: { display: false } },
+          x: {
+            stacked: true,
+            grid: { display: false },
+          },
           y: {
+            stacked: true,
             beginAtZero: true,
-            title: { display: true, text: 'Care events' },
+            max: 100,
+            title: { display: true, text: '% of care events' },
+            ticks: {
+              callback: (val) => `${val}%`,
+            },
           },
         },
       },
