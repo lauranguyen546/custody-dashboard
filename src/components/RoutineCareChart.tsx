@@ -20,11 +20,11 @@ export default function RoutineCareChart({ data }: RoutineCareChartProps) {
 
     // Filter to only items with significant data (>5 events)
     const labels = Object.keys(data).filter(
-      k => data[k].Laura + data[k].Amber > 5
+      k => data[k].laura + data[k].amber > 5
     )
 
-    const lauraData = labels.map(k => data[k].Laura)
-    const amberData = labels.map(k => data[k].Amber)
+    const lauraData = labels.map(k => data[k].laura)
+    const amberData = labels.map(k => data[k].amber)
 
     if (chartRef.current) {
       chartRef.current.destroy()
@@ -62,7 +62,7 @@ export default function RoutineCareChart({ data }: RoutineCareChartProps) {
               afterBody: (items) => {
                 const label = items[0].label
                 const d = data[label]
-                const total = d.Laura + d.Amber
+                const total = d.laura + d.amber
                 if (total === 0) return ''
                 const item = items[0]
                 if (!item || !item.parsed || typeof item.parsed.y !== 'number') return ''

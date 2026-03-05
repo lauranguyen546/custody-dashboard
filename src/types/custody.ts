@@ -1,5 +1,5 @@
 export interface RoutineCareData {
-  [key: string]: { Laura: number; Amber: number }
+  [key: string]: { laura: number; amber: number }
 }
 
 export interface MonthlyData {
@@ -19,7 +19,7 @@ export interface MonthlyData {
 }
 
 export interface DayOfWeekData {
-  [key: string]: { Laura: number; Amber: number }
+  [key: string]: { laura: number; amber: number }
 }
 
 export interface ExpenseCategory {

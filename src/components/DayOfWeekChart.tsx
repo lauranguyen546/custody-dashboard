@@ -34,13 +34,13 @@ export default function DayOfWeekChart({ data }: DayOfWeekChartProps) {
         datasets: [
           {
             label: 'Laura',
-            data: dowOrder.map((d) => data[d].Laura),
+            data: dowOrder.map((d) => data[d].laura),
             backgroundColor: '#2563eb',
             borderRadius: 4,
           },
           {
             label: 'Amber',
-            data: dowOrder.map((d) => data[d].Amber),
+            data: dowOrder.map((d) => data[d].amber),
             backgroundColor: '#d97706',
             borderRadius: 4,
           },
