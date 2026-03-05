@@ -89,7 +89,27 @@ export default function DashboardPage() {
             <h2 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-100">
               Parenting time outcomes by month
             </h2>
-            <div className="h-80">
+            <div className="flex gap-3 mb-4">
+              <div className="flex-1 bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
+                <div className="text-2xl font-bold text-blue-600">
+                  {kpi.lauraPrimary.value}%
+                </div>
+                <div className="text-xs text-gray-500">Laura (sole)</div>
+              </div>
+              <div className="flex-1 bg-gray-50 border border-gray-200 rounded-lg p-3 text-center">
+                <div className="text-2xl font-bold text-gray-500">
+                  {Math.round((kpi.lauraPrimary.totalDays - kpi.lauraPrimary.days - kpi.amberPrimary.days) / kpi.lauraPrimary.totalDays * 100)}%
+                </div>
+                <div className="text-xs text-gray-500">Both present</div>
+              </div>
+              <div className="flex-1 bg-amber-50 border border-amber-200 rounded-lg p-3 text-center">
+                <div className="text-2xl font-bold text-amber-600">
+                  {kpi.amberPrimary.value}%
+                </div>
+                <div className="text-xs text-gray-500">Amber (sole)</div>
+              </div>
+            </div>
+            <div className="h-64">
               <ParentingTimeChart data={monthlyData} />
             </div>
           </div>

@@ -23,14 +23,14 @@ export default function RoutineCareChart({ data }: RoutineCareChartProps) {
       k => data[k].laura + data[k].amber > 5
     )
 
-    // Convert to percentages
+    // Convert to percentages — derive amber to guarantee bars always sum to 100
     const lauraData = labels.map(k => {
       const total = data[k].laura + data[k].amber
       return total > 0 ? Math.round((data[k].laura / total) * 100) : 0
     })
-    const amberData = labels.map(k => {
+    const amberData = labels.map((k, i) => {
       const total = data[k].laura + data[k].amber
-      return total > 0 ? Math.round((data[k].amber / total) * 100) : 0
+      return total > 0 ? Math.max(0, 100 - lauraData[i]) : 0
     })
 
     if (chartRef.current) {
@@ -49,13 +49,13 @@ export default function RoutineCareChart({ data }: RoutineCareChartProps) {
             label: 'Laura',
             data: lauraData,
             backgroundColor: '#2563eb',
-            borderRadius: 4,
+            borderRadius: 0,
           },
           {
             label: 'Amber',
             data: amberData,
             backgroundColor: '#d97706',
-            borderRadius: 4,
+            borderRadius: 0,
           },
         ],
       },
@@ -81,14 +81,19 @@ export default function RoutineCareChart({ data }: RoutineCareChartProps) {
           x: {
             stacked: true,
             grid: { display: false },
+            ticks: {
+              font: { size: 11 },
+              padding: 4,
+            },
           },
           y: {
             stacked: true,
             beginAtZero: true,
-            max: 100,
+            max: 110,
             title: { display: true, text: '% of care events' },
             ticks: {
-              callback: (val) => `${val}%`,
+              stepSize: 20,
+              callback: (val) => Number(val) > 100 ? '' : `${val}%`,
             },
           },
         },
