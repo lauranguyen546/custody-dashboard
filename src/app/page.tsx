@@ -4,7 +4,6 @@ import RoutineCareChart from '@/components/RoutineCareChart'
 import ParentingTimeChart from '@/components/ParentingTimeChart'
 import ForfeitedChart from '@/components/ForfeitedChart'
 import DayOfWeekChart from '@/components/DayOfWeekChart'
-import EngagementChart from '@/components/EngagementChart'
 import ScheduledVsActualChart from '@/components/ScheduledVsActualChart'
 import data from '../../data/custody-data.json'
 import { MonthlyData } from '@/types/custody'
@@ -113,40 +112,25 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Engagement Chart - Full Width */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
-          <h2 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-100">
-            Amber&apos;s actual time with EN — share of available hours per month
-          </h2>
-          <div className="bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-4 mb-4 text-sm">
-            <strong>Note for court:</strong> The{' '}
-            <span className="text-amber-700 font-semibold">orange line</span>{' '}
-            shows Amber&apos;s recorded hours with EN as a percentage of total
-            available hours — the most accurate measure of parenting presence.
-          </div>
-          <div className="h-80">
-            <EngagementChart data={engagementData} />
-          </div>
-        </div>
-
         {/* Scheduled vs Actual Hours Chart */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
           <h2 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-100">
-            Amber&apos;s scheduled time vs. actual time with EN — court order vs. reality
+            Amber&apos;s scheduled parenting time vs. actual time with EN
           </h2>
           <div className="bg-red-50 border-l-4 border-red-500 rounded-r-lg p-4 mb-4 text-sm">
-            <strong>Note for court:</strong> Grey bars show hours Amber was{' '}
-            <em>court-ordered</em> to have Ellis (every Wednesday 4:30–7:30 PM +
-            every other weekend Fri 4 PM – Sun 5 PM). Orange bars show hours she
+            <strong>Note for court:</strong> Grey bars show Amber&apos;s{' '}
+            <em>scheduled parenting time</em> — agreed upon by both parties and
+            in effect since September 2025 (every Wednesday 4:30–7:30 PM + every
+            other weekend Fri 4 PM – Sun 5 PM). Orange bars show hours she
             actually spent with Ellis. The{' '}
             <span className="text-purple-600 font-semibold">purple dashed line</span>{' '}
-            shows utilization — the percentage of her court-ordered time she used.
+            shows utilization — the percentage of her scheduled parenting time she used.
           </div>
           <div className="h-80">
             <ScheduledVsActualChart data={engagementData} />
           </div>
           <p className="text-xs text-gray-500 mt-3 italic">
-            Scheduled hours based on court order: Wed 4:30–7:30 PM (3 hrs) + EOW Fri 4 PM–Sun 5 PM (49 hrs/weekend).
+            Scheduled hours based on parenting agreement (effective Sept 2025): Wed 4:30–7:30 PM (3 hrs) + EOW Fri 4 PM–Sun 5 PM (49 hrs/weekend).
             Actual hours sourced from co-parent custody log.
           </p>
         </div>
@@ -154,16 +138,18 @@ export default function DashboardPage() {
         {/* Engagement Quality Table */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
           <h2 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-100">
-            Amber&apos;s contact with EN — month-by-month breakdown{' '}
+            Amber&apos;s time with EN — scheduled vs. actual{' '}
             <span className="text-sm text-gray-500 font-normal">(July 2025 onward)</span>
           </h2>
           <div className="bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-4 mb-4 text-sm">
-            <strong>Key findings:</strong> &quot;Contact days&quot; includes texts and calls —
-            overstating actual involvement. Hours tell the real story: July 2025 (first full month
-            post-separation), Amber logged <strong>3.5 hrs — 0.47% of available time</strong>,
-            despite contact flagged on 13 of 31 days. Feb 2026, the highest contact-day month (56%),
-            still totaled only <strong>17.6 hrs (2.62%)</strong>. Amber had{' '}
-            <strong>6 overnights total</strong> — May & Oct 2025 only;{' '}
+            <strong>Key findings:</strong> This table shows two separate measures of Amber&apos;s
+            presence in Ellis&apos;s life. <strong>Scheduled hours</strong> reflect the parenting
+            time agreed to by both parties (effective Sept 2025). <strong>Actual hours</strong>{' '}
+            captures <em>all</em> logged time with EN — including any unscheduled or bonus contact —
+            making it the most inclusive possible measure. Even combining scheduled and unscheduled
+            time, Amber&apos;s total presence remains under <strong>3% of any given month</strong>.
+            In most months she does not fully use her scheduled time, and does not seek additional
+            time beyond it. She had <strong>6 overnights total</strong> (May &amp; Oct 2025 only);{' '}
             <strong>zero since October 2025</strong>.
           </div>
           <div className="overflow-x-auto">
@@ -171,11 +157,11 @@ export default function DashboardPage() {
               <thead>
                 <tr className="bg-amber-100">
                   <th className="text-left p-3 font-semibold">Month</th>
-                  <th className="text-center p-3 font-semibold bg-amber-50">Hours with EN</th>
-                  <th className="text-center p-3 font-semibold bg-amber-50">% of Available Hours</th>
-                  <th className="text-center p-3 font-semibold">Assigned Days<br/>(Amber)</th>
+                  <th className="text-center p-3 font-semibold">Scheduled Hrs<br/><span className="text-xs font-normal text-gray-500">(agreed)</span></th>
+                  <th className="text-center p-3 font-semibold bg-amber-50">Actual Hrs<br/><span className="text-xs font-normal text-gray-500">(all contact)</span></th>
+                  <th className="text-center p-3 font-semibold text-red-700">Utilization<br/><span className="text-xs font-normal text-gray-500">actual ÷ sched</span></th>
+                  <th className="text-center p-3 font-semibold">% of Month<br/><span className="text-xs font-normal text-gray-500">of 24hr days</span></th>
                   <th className="text-center p-3 font-semibold">Forfeited<br/>Days</th>
-                  <th className="text-center p-3 font-semibold">Hours with Ellis<br/>(Amber Time)</th>
                 </tr>
               </thead>
               <tbody>
@@ -184,24 +170,30 @@ export default function DashboardPage() {
                   const names = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
                   const label = `${names[parseInt(m)]} 20${y.slice(2)}`
                   const availHours = data.calDays * 24
-                  const pctHours = availHours > 0 ? ((data.amberHours / availHours) * 100).toFixed(2) : '0.00'
-                  const isLow = parseFloat(pctHours) < 2
+                  const scheduledHrs = data.amberScheduledHours ?? 0
+                  const actualHrs = data.amberHours
+                  const utilPct = scheduledHrs > 0 ? ((actualHrs / scheduledHrs) * 100).toFixed(0) : null
+                  const pctOfMonth = availHours > 0 ? ((actualHrs / availHours) * 100).toFixed(2) : '0.00'
+                  const utilNum = utilPct !== null ? parseInt(utilPct) : 0
+                  const utilColor = utilNum >= 80 ? 'text-green-600' : utilNum >= 50 ? 'text-amber-600' : 'text-red-600'
 
                   return (
                     <tr key={key} className="border-b border-gray-100">
                       <td className="p-3 font-medium">{label}</td>
-                      <td className={`p-3 text-center font-semibold ${data.amberHours > 0 ? 'text-amber-700' : 'text-gray-400'}`}>
-                        {data.amberHours > 0 ? `${data.amberHours.toFixed(1)} hrs` : '—'}
+                      <td className="p-3 text-center text-gray-600">
+                        {scheduledHrs > 0 ? `${scheduledHrs} hrs` : <span className="text-gray-400 text-xs">pre-agreement</span>}
                       </td>
-                      <td className={`p-3 text-center font-bold ${isLow ? 'text-red-600' : 'text-green-600'}`}>
-                        {pctHours}%
+                      <td className={`p-3 text-center font-semibold ${actualHrs > 0 ? 'text-amber-700' : 'text-gray-400'}`}>
+                        {actualHrs > 0 ? `${actualHrs.toFixed(1)} hrs` : '—'}
                       </td>
-                      <td className="p-3 text-center">{data.amberScheduled ?? '—'}</td>
+                      <td className={`p-3 text-center font-bold ${utilPct !== null ? utilColor : 'text-gray-400'}`}>
+                        {utilPct !== null ? `${utilPct}%` : '—'}
+                      </td>
+                      <td className="p-3 text-center text-red-600 font-semibold">
+                        {pctOfMonth}%
+                      </td>
                       <td className={`p-3 text-center font-semibold ${(data.forfeited ?? 0) > 0 ? 'text-red-600' : 'text-gray-400'}`}>
-                        {data.forfeited ?? 0}
-                      </td>
-                      <td className={`p-3 text-center font-semibold ${data.amberHours > 0 ? 'text-amber-700' : 'text-gray-400'}`}>
-                        {data.amberHours > 0 ? `${data.amberHours.toFixed(1)} hrs` : '—'}
+                        {(data.forfeited ?? 0) > 0 ? data.forfeited : '—'}
                       </td>
                     </tr>
                   )
@@ -210,29 +202,38 @@ export default function DashboardPage() {
               <tfoot>
                 <tr className="bg-gray-100 font-bold">
                   <td className="p-3">Total (Jul 2025 – present)</td>
-                  <td className="p-3 text-center bg-amber-50">
+                  <td className="p-3 text-center text-gray-600">
+                    {Object.values(engagementData).reduce((sum, d) => sum + (d.amberScheduledHours ?? 0), 0)} hrs
+                  </td>
+                  <td className="p-3 text-center text-amber-700 bg-amber-50">
                     {Object.values(engagementData).reduce((sum, d) => sum + d.amberHours, 0).toFixed(1)} hrs
                   </td>
-                  <td className="p-3 text-center bg-amber-50">
+                  <td className="p-3 text-center text-red-600">
                     {(() => {
-                      const totalHours = Object.values(engagementData).reduce((sum, d) => sum + d.amberHours, 0)
-                      const totalAvail = Object.values(engagementData).reduce((sum, d) => sum + (d.calDays * 24), 0)
-                      return totalAvail > 0 ? ((totalHours / totalAvail) * 100).toFixed(2) : '0.00'
-                    })()}%
+                      const totalActual = Object.values(engagementData).reduce((sum, d) => sum + d.amberHours, 0)
+                      const totalSched = Object.values(engagementData).reduce((sum, d) => sum + (d.amberScheduledHours ?? 0), 0)
+                      return totalSched > 0 ? `${((totalActual / totalSched) * 100).toFixed(0)}%` : '—'
+                    })()}
                   </td>
-                  <td className="p-3 text-center">
-                    {Object.values(engagementData).reduce((sum, d) => sum + (d.amberScheduled ?? 0), 0)}
+                  <td className="p-3 text-center text-red-600">
+                    {(() => {
+                      const totalActual = Object.values(engagementData).reduce((sum, d) => sum + d.amberHours, 0)
+                      const totalAvail = Object.values(engagementData).reduce((sum, d) => sum + (d.calDays * 24), 0)
+                      return totalAvail > 0 ? `${((totalActual / totalAvail) * 100).toFixed(2)}%` : '—'
+                    })()}
                   </td>
                   <td className="p-3 text-center font-semibold text-red-600">
                     {Object.values(engagementData).reduce((sum, d) => sum + (d.forfeited ?? 0), 0)}
-                  </td>
-                  <td className="p-3 text-center text-amber-700 font-semibold">
-                    {Object.values(engagementData).reduce((sum, d) => sum + d.amberHours, 0).toFixed(1)} hrs
                   </td>
                 </tr>
               </tfoot>
             </table>
           </div>
+          <p className="text-xs text-gray-500 mt-3 italic">
+            &ldquo;Actual hours&rdquo; = all logged time with EN, including any contact outside scheduled windows.
+            Utilization = actual ÷ scheduled hours (Sept 2025 onward). Pre-agreement months (Jul–Aug 2025) show no scheduled hours.
+            Forfeited days = scheduled day where Laura was sole caregiver.
+          </p>
         </div>
 
         {/* Summary Table */}
