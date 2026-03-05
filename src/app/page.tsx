@@ -2,8 +2,6 @@ import { Metadata } from 'next'
 import KPISection from '@/components/KPISection'
 import RoutineCareChart from '@/components/RoutineCareChart'
 import ParentingTimeChart from '@/components/ParentingTimeChart'
-import ForfeitedChart from '@/components/ForfeitedChart'
-import DayOfWeekChart from '@/components/DayOfWeekChart'
 import ScheduledVsActualChart from '@/components/ScheduledVsActualChart'
 import data from '../../data/custody-data.json'
 import { MonthlyData } from '@/types/custody'
@@ -93,31 +91,6 @@ export default function DashboardPage() {
             </h2>
             <div className="h-80">
               <ParentingTimeChart data={monthlyData} />
-            </div>
-          </div>
-        </div>
-
-        {/* Chart Grid 2 */}
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-100">
-              Amber&apos;s forfeited parenting periods by month
-            </h2>
-            <div className="h-80">
-              <ForfeitedChart data={monthlyData} />
-            </div>
-            <p className="text-xs text-gray-500 mt-3 italic">
-              Forfeited = scheduled Amber day where Laura was actual caregiver.
-              Forfeited % = forfeited ÷ Amber&apos;s scheduled days that month.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-100">
-              Routine care events by day of week
-            </h2>
-            <div className="h-80">
-              <DayOfWeekChart data={dayOfWeekData} />
             </div>
           </div>
         </div>

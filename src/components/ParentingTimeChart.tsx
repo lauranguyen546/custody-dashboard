@@ -30,6 +30,20 @@ export default function ParentingTimeChart({ data }: ParentingTimeChartProps) {
       return `${names[parseInt(m)]} ${y.slice(2)}`
     })
 
+    // Convert to percentages
+    const lauraPct = monthLabels.map((k) => {
+      const t = data[k].total
+      return t > 0 ? Math.round((data[k].lauraActual / t) * 100) : 0
+    })
+    const bothPct = monthLabels.map((k) => {
+      const t = data[k].total
+      return t > 0 ? Math.round((data[k].bothActual / t) * 100) : 0
+    })
+    const amberPct = monthLabels.map((k) => {
+      const t = data[k].total
+      return t > 0 ? Math.round((data[k].amberActual / t) * 100) : 0
+    })
+
     if (chartRef.current) {
       chartRef.current.destroy()
     }
@@ -44,19 +58,19 @@ export default function ParentingTimeChart({ data }: ParentingTimeChartProps) {
         datasets: [
           {
             label: 'Laura (sole)',
-            data: monthLabels.map((k) => data[k].lauraActual),
+            data: lauraPct,
             backgroundColor: '#2563eb',
             borderRadius: 2,
           },
           {
             label: 'Both present',
-            data: monthLabels.map((k) => data[k].bothActual),
+            data: bothPct,
             backgroundColor: '#94a3b8',
             borderRadius: 2,
           },
           {
             label: 'Amber (sole)',
-            data: monthLabels.map((k) => data[k].amberActual),
+            data: amberPct,
             backgroundColor: '#d97706',
             borderRadius: 2,
           },
@@ -65,13 +79,34 @@ export default function ParentingTimeChart({ data }: ParentingTimeChartProps) {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { position: 'top' } },
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: {
+            callbacks: {
+              label: (item) => {
+                const idx = item.dataIndex
+                const k = monthLabels[idx]
+                const pct = item.parsed.y
+                const raw = item.datasetIndex === 0
+                  ? data[k].lauraActual
+                  : item.datasetIndex === 1
+                  ? data[k].bothActual
+                  : data[k].amberActual
+                return `${item.dataset.label}: ${pct}% (${raw} days)`
+              },
+            },
+          },
+        },
         scales: {
           x: { stacked: true, grid: { display: false } },
           y: {
             stacked: true,
             beginAtZero: true,
-            title: { display: true, text: 'Days' },
+            max: 100,
+            title: { display: true, text: '% of days' },
+            ticks: {
+              callback: (val) => `${val}%`,
+            },
           },
         },
       },
