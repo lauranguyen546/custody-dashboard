@@ -24,6 +24,16 @@ export default function DashboardPage() {
       return acc
     }, {} as MonthlyData)
 
+  // Average utilization of scheduled parenting time (Sept 2025 onward, where schedule exists)
+  const utilizationMonths = Object.entries(monthlyData)
+    .filter(([key, d]) => key >= '2025-09' && ((d as {amberScheduledHours?: number}).amberScheduledHours ?? 0) > 0)
+  const avgUtilization = utilizationMonths.length > 0
+    ? utilizationMonths.reduce((sum, [, d]) => {
+        const dd = d as {amberHours: number; amberScheduledHours?: number}
+        return sum + (dd.amberHours / (dd.amberScheduledHours ?? 1)) * 100
+      }, 0) / utilizationMonths.length
+    : undefined
+
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -50,7 +60,7 @@ export default function DashboardPage() {
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* KPI Cards */}
-        <KPISection metrics={kpi} dateRange={meta.dateRange} />
+        <KPISection metrics={kpi} dateRange={meta.dateRange} avgUtilization={avgUtilization} />
 
         {/* Chart Grid 1 */}
         <div className="grid md:grid-cols-2 gap-6 mb-6">

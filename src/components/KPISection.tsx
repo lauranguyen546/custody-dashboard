@@ -9,9 +9,10 @@ interface KPIMetrics {
 interface KPISectionProps {
   metrics: KPIMetrics
   dateRange: string
+  avgUtilization?: number
 }
 
-export default function KPISection({ metrics, dateRange }: KPISectionProps) {
+export default function KPISection({ metrics, dateRange, avgUtilization }: KPISectionProps) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
       <div className="bg-white border border-gray-200 rounded-xl p-4 text-center shadow-sm">
@@ -50,15 +51,17 @@ export default function KPISection({ metrics, dateRange }: KPISectionProps) {
         </div>
       </div>
 
-      <div className="bg-white border border-gray-200 rounded-xl p-4 text-center shadow-sm">
-        <div className="text-3xl font-bold text-gray-700">
-          {metrics.amberHours.equivalentDays}
+      <div className="bg-white border border-red-200 rounded-xl p-4 text-center shadow-sm">
+        <div className="text-3xl font-bold text-red-600">
+          {avgUtilization !== undefined ? `${avgUtilization.toFixed(0)}%` : `${metrics.amberHours.equivalentDays}d`}
         </div>
         <div className="text-xs text-gray-500 uppercase tracking-wide mt-1">
-          Amber&apos;s total time w/ EN
+          Avg. parenting time used
         </div>
         <div className="text-xs text-gray-400 mt-1">
-          {metrics.amberHours.total.toFixed(1)} hrs over {dateRange}
+          {avgUtilization !== undefined
+            ? 'of scheduled hrs, Sept 2025–present'
+            : `${metrics.amberHours.total.toFixed(1)} hrs over ${dateRange}`}
         </div>
       </div>
     </div>
